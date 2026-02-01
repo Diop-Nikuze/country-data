@@ -1,0 +1,5 @@
+<div class="snap-list">
+  @for (snapItem of mySnaps(); track snapItem.title) {
+    <app-snap-face [snapFace]="snapItem" />
+  }
+</div>
