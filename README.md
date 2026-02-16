@@ -55,12 +55,10 @@ Solution du challenge Frontend Mentor pour explorer les pays du monde avec reche
 
 ---
 
-## Difficultés rencontrées
+## ⚠️ Difficultés rencontrées
 
-- Comprendre la structure complexe des données API
-- Manipuler des propriétés imbriquées
-- Récupérer des valeurs dynamiques sans connaître les clés à l’avance
-- Gérer les cas où certaines données sont absentes (`N/A`)
+- Récupérer des valeurs lorsque je ne connaissais pas les noms des propriétés à l’avance
+- ✅ Problème résolu grâce à la méthode `Object.values()`
 
 ---
 
