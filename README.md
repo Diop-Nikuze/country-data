@@ -1,34 +1,76 @@
-# Rest Countries API - Challenge
+🌍 Rest Countries API – Angular Challenge
 
-Solution du challenge Frontend Mentor pour explorer les pays du monde avec recherche et filtrage dynamique.
+Application Angular permettant d’explorer les pays du monde avec recherche dynamique, filtrage par région et page détail.
 
-## Fonctionnalités
+🚀 Fonctionnalités
 
-- Liste complète des pays triée par ordre alphabétique.
-- Recherche textuelle instantanée.
-- Filtrage par région.
-- Navigation détaillée via le routage Angular.
+✔️ Liste des pays depuis une API externe
 
-## Acquis techniques du challenge
+✔️ Recherche en temps réel
 
-### Angular Signals
+✔️ Filtrage par région
 
-- **Gestion d'état** : Utilisation de `signal()` pour piloter la recherche et les filtres.
-- **Inputs** : Utilisation de `input.required()` pour récupérer dynamiquement les paramètres d'URL.
+✔️ Navigation vers une page détail (routing dynamique)
 
-### RxJS et Programmation Réactive
+🧠 Ce que j’ai appris (Débutant Angular)
+🔹 Services & HttpClient
 
-- **toObservable** : Transformation des Signals en flux pour les coupler aux données API.
-- **combineLatest** : Synchronisation de plusieurs sources (API + Recherche + Filtre région) pour un affichage cohérent.
-- **pipe et map** : Transformation des données (filtrage et tri immuable avec `[...countries]`).
-- **localeCompare** : Tri alphabétique précis gérant les caractères spéciaux.
+Centraliser les appels API dans un service
 
-### HttpClient et Services
+Utiliser HttpClient
 
-- **Centralisation** : Gestion des appels API dans un `CountryService`.
-- **Consommation** : Utilisation du pipe `| async` pour une gestion propre des souscriptions et éviter les fuites de mémoire.
+Retourner des Observable
 
-### Routing
+Séparer la logique métier du composant (bonne pratique Angular)
 
-- **Routes dynamiques** : Mise en place de routes paramétrées (`country/:name`).
-- **Navigation** : Utilisation de `RouterLink` pour une expérience fluide sans rechargement de page.
+🔹 Observable & pipe
+
+Transformer les données avec pipe()
+
+Utiliser | async dans le template
+
+Éviter subscribe() manuel (prévention des memory leaks)
+
+🔹 Signals & combineLatest
+
+Gérer l’état local avec signal()
+
+Réagir automatiquement aux changements
+
+Combiner plusieurs sources de données avec combineLatest
+
+🔹 Routing
+
+Créer des routes dynamiques : country/:name
+
+Utiliser RouterLink
+
+Récupérer les paramètres avec input.required()
+
+🔹 Template moderne
+
+Utiliser @if et @for
+
+Optimiser le rendu avec track
+
+⚠️ Difficulté rencontrée
+
+Comprendre la structure complexe des données API
+
+Manipuler des propriétés imbriquées
+
+Récupérer des valeurs dynamiques sans connaître les clés à l’avance
+
+Gérer les cas où certaines données sont absentes (N/A)
+
+📌 Conclusion
+
+Ce projet m’a permis de comprendre :
+
+La structure d’une application Angular
+
+La programmation réactive avec Observable
+
+La gestion d’état moderne avec Signal
+
+Les bonnes pratiques Angular
