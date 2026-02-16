@@ -1,7 +1,6 @@
 # 🌍 Rest Countries API – Angular Challenge
 
-Solution du challenge Frontend Mentor pour explorer les pays du monde avec recherche et filtrage dynamique :  
-https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
+Solution du challenge Frontend Mentor pour explorer les pays du monde : [ https://shorturl.at/NoJ9M ]
 
 ---
 
