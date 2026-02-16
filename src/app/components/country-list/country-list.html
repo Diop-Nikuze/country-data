@@ -1,8 +1,8 @@
 <main class="container">
   <div class="header">
     <h1>Notre belle planète</h1>
-    <input type="text" placeholder="Rechercher un pays..." (input)="onSearchTermChange($event)" />
-    <select name="region" id="region" (change)="onRegionChange($event)">
+    <input [formControl]="searchControl" type="text" placeholder="Rechercher un pays..." />
+    <select name="region" id="region" [formControl]="regionTerm">
       <option value="">Toutes les régions</option>
       <option value="africa">Afrique</option>
       <option value="americas">Amériques</option>

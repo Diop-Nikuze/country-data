@@ -2,12 +2,13 @@ import { Component, inject, signal } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { CountryService } from '../../services/countryService';
 import { RouterLink } from '@angular/router';
-import { combineLatest, map } from 'rxjs';
+import { combineLatest, map, startWith } from 'rxjs';
 import { toObservable } from '@angular/core/rxjs-interop';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-country-list',
-  imports: [AsyncPipe, RouterLink],
+  imports: [AsyncPipe, RouterLink, ReactiveFormsModule],
   templateUrl: './country-list.html',
   styleUrl: './country-list.scss',
 })
@@ -19,13 +20,13 @@ export class CountryList {
     map((countries) => [...countries].sort((a, b) => a.name.common.localeCompare(b.name.common))),
   );
 
-  searchTerm = signal('');
-  regionTerm = signal('');
+  searchControl = new FormControl('', { nonNullable: true });
+  regionTerm = new FormControl('', { nonNullable: true });
 
   filteredCountries$ = combineLatest([
     this.sortedCountries$,
-    toObservable(this.searchTerm),
-    toObservable(this.regionTerm),
+    this.searchControl.valueChanges.pipe(startWith('')),
+    this.regionTerm.valueChanges.pipe(startWith('')),
   ]).pipe(
     map(([countries, term, region]) => {
       return countries.filter((country) => {
@@ -38,14 +39,4 @@ export class CountryList {
       });
     }),
   );
-
-  onSearchTermChange(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.searchTerm.set(input.value);
-  }
-
-  onRegionChange(event: Event) {
-    const select = event.target as HTMLSelectElement;
-    this.regionTerm.set(select.value);
-  }
 }
