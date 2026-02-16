@@ -1,76 +1,74 @@
-🌍 Rest Countries API – Angular Challenge
+# 🌍 Rest Countries API – Angular Challenge
 
-Application Angular permettant d’explorer les pays du monde avec recherche dynamique, filtrage par région et page détail.
+Solution du challenge Frontend Mentor pour explorer les pays du monde avec recherche et filtrage dynamique.
 
-🚀 Fonctionnalités
+---
 
-✔️ Liste des pays depuis une API externe
+## Fonctionnalités
 
-✔️ Recherche en temps réel
+- Liste des pays depuis une API externe
+- Recherche en temps réel
+- Filtrage par région
+- Navigation vers une page détail (routing dynamique)
 
-✔️ Filtrage par région
+---
 
-✔️ Navigation vers une page détail (routing dynamique)
+## Ce que j’ai appris (Débutant Angular)
 
-🧠 Ce que j’ai appris (Débutant Angular)
-🔹 Services & HttpClient
+### 🔹 Services & HttpClient
 
-Centraliser les appels API dans un service
+- Centraliser les appels API dans un **service**
+- Utiliser **HttpClient**
+- Retourner des **Observable**
+- Séparer la logique métier du composant (**bonne pratique Angular**)
 
-Utiliser HttpClient
+---
 
-Retourner des Observable
+### 🔹 Observable & pipe
 
-Séparer la logique métier du composant (bonne pratique Angular)
+- Transformer les données avec `pipe()`
+- Utiliser `| async` dans le template
+- Éviter `subscribe()` manuel (prévention des memory leaks)
 
-🔹 Observable & pipe
+---
 
-Transformer les données avec pipe()
+### 🔹 Signals & combineLatest
 
-Utiliser | async dans le template
+- Gérer l’état local avec `signal()`
+- Réagir automatiquement aux changements
+- Combiner plusieurs sources de données avec `combineLatest`
 
-Éviter subscribe() manuel (prévention des memory leaks)
+---
 
-🔹 Signals & combineLatest
+### 🔹 Routing
 
-Gérer l’état local avec signal()
+- Créer des routes dynamiques : `country/:name`
+- Utiliser `RouterLink`
+- Récupérer les paramètres avec `input.required()`
 
-Réagir automatiquement aux changements
+---
 
-Combiner plusieurs sources de données avec combineLatest
+### 🔹 Template moderne
 
-🔹 Routing
+- Utiliser `@if` et `@for`
+- Optimiser le rendu avec `track`
 
-Créer des routes dynamiques : country/:name
+---
 
-Utiliser RouterLink
+## Difficultés rencontrées
 
-Récupérer les paramètres avec input.required()
+- Comprendre la structure complexe des données API
+- Manipuler des propriétés imbriquées
+- Récupérer des valeurs dynamiques sans connaître les clés à l’avance
+- Gérer les cas où certaines données sont absentes (`N/A`)
 
-🔹 Template moderne
+---
 
-Utiliser @if et @for
-
-Optimiser le rendu avec track
-
-⚠️ Difficulté rencontrée
-
-Comprendre la structure complexe des données API
-
-Manipuler des propriétés imbriquées
-
-Récupérer des valeurs dynamiques sans connaître les clés à l’avance
-
-Gérer les cas où certaines données sont absentes (N/A)
-
-📌 Conclusion
+## Conclusion
 
 Ce projet m’a permis de comprendre :
 
-La structure d’une application Angular
-
-La programmation réactive avec Observable
-
-La gestion d’état moderne avec Signal
-
-Les bonnes pratiques Angular
+- La structure d’une application Angular
+- La programmation réactive avec Observable
+- La gestion d’état moderne avec Signal
+- Les bonnes pratiques Angular
