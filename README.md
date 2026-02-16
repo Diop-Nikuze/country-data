@@ -55,10 +55,10 @@ Solution du challenge Frontend Mentor pour explorer les pays du monde avec reche
 
 ---
 
-## ⚠️ Difficultés rencontrées
+## Difficultés rencontrées
 
 - Récupérer des valeurs lorsque je ne connaissais pas les noms des propriétés à l’avance
-- ✅ Problème résolu grâce à la méthode `Object.values()`
+- Problème résolu grâce à la méthode `Object.values()`
 
 ---
 
