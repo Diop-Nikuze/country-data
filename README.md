@@ -32,9 +32,9 @@ Solution du challenge Frontend Mentor pour explorer les pays du monde : [ https:
 
 ---
 
-### 🔹 Signals & combineLatest
+### 🔹 Reactive Forms & combineLatest
 
-- Gérer l’état local avec `signal()`
+- Reactive Forms : Utilisation de FormControl pour gérer l'input de recherche de manière plus fluide.
 - Réagir automatiquement aux changements
 - Combiner plusieurs sources de données avec `combineLatest`
 
@@ -64,8 +64,6 @@ Solution du challenge Frontend Mentor pour explorer les pays du monde : [ https:
 
 ## Next Steps / Améliorations possibles
 
-Voici quelques idées pour améliorer le projet et le rendre plus complet :
-
 - **Ajouter un debounce** sur la recherche pour réduire les appels API et améliorer les performances.
 - **Afficher le titre du pays** dans l’onglet du navigateur dynamiquement selon le pays sélectionné.
 - **Intégrer Bootstrap** pour un design plus réactif et moderne.
@@ -79,5 +77,5 @@ Ce projet m’a permis de comprendre :
 
 - La structure d’une application Angular
 - La programmation réactive avec Observable
-- La gestion d’état moderne avec Signal
+- La gestion d’état moderne avec Reactive Forms
 - Les bonnes pratiques Angular

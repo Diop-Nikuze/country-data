@@ -3,7 +3,6 @@ import { AsyncPipe } from '@angular/common';
 import { CountryService } from '../../services/countryService';
 import { RouterLink } from '@angular/router';
 import { combineLatest, map, startWith } from 'rxjs';
-import { toObservable } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
