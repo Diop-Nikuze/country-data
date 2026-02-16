@@ -1,0 +1,43 @@
+<main class="container">
+  <button class="btn-back" [routerLink]="['/']"><span class="arrow">←</span> Back</button>
+
+  @if (country$ | async; as countries) {
+    @let country = countries[0];
+    <div class="detail-grid">
+      <div class="flag-container">
+        <img [src]="country.flags.svg" [alt]="country.name.common" />
+      </div>
+
+      <div class="content-container">
+        <h2>{{ country.name.common }}</h2>
+
+        <div class="info-columns">
+          <div class="col">
+            <p><strong>Native Name:</strong> {{ getNativeName(country) }}</p>
+            <p><strong>Population:</strong> {{ country.population.toLocaleString() }}</p>
+            <p><strong>Region:</strong> {{ country.region }}</p>
+            <p><strong>Sub Region:</strong> {{ country.subregion }}</p>
+            <p><strong>Capital:</strong> {{ country.capital[0] || 'N/A' }}</p>
+          </div>
+
+          <div class="col">
+            <p><strong>Top Level Domain:</strong> {{ country.tld[0] }}</p>
+            <p><strong>Currencies:</strong> {{ getCurrencies(country) }}</p>
+            <p><strong>Languages:</strong> {{ getLanguages(country) }}</p>
+          </div>
+        </div>
+
+        <div class="borders">
+          <strong>Border Countries:</strong>
+          <div class="border-tags">
+            @for (border of country.borders; track border) {
+              <span class="tag">{{ border }}</span>
+            } @empty {
+              <span>None</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</main>

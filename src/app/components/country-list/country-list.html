@@ -1,0 +1,34 @@
+<main class="container">
+  <div class="header">
+    <h1>Notre belle planète</h1>
+    <input type="text" placeholder="Rechercher un pays..." (input)="onSearchTermChange($event)" />
+    <select name="region" id="region" (change)="onRegionChange($event)">
+      <option value="">Toutes les régions</option>
+      <option value="africa">Afrique</option>
+      <option value="americas">Amériques</option>
+      <option value="asia">Asie</option>
+      <option value="europe">Europe</option>
+      <option value="oceania">Océanie</option>
+    </select>
+  </div>
+
+  <div class="card">
+    @if (filteredCountries$ | async; as countries) {
+      @for (country of countries; track country.name.common) {
+        <div class="card-details" [routerLink]="['country/', country.name.common]">
+          <div class="card-image">
+            <img [src]="country.flags.svg" [alt]="country.name.common" />
+          </div>
+          <div class="card-title">
+            <h1>{{ country.name.common }}</h1>
+          </div>
+          <div class="info">
+            <p>{{ country.population.toLocaleString() }}</p>
+            <p>{{ country.region }}</p>
+            <p>{{ country.capital }}</p>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</main>

@@ -1,0 +1,126 @@
+$bg-white: #ffffff;
+$text-main: #111517;
+$text-muted: #666;
+$shadow: 0 2px 9px rgba(0, 0, 0, 0.05);
+$border-radius: 6px;
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: $bg-white;
+  min-height: 100vh;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 1.8rem;
+      color: $text-main;
+      width: 100%;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: 992px) {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    input,
+    select {
+      padding: 0.9rem 1.5rem;
+      border: 1px solid #f2f2f2;
+      border-radius: $border-radius;
+      box-shadow: $shadow;
+      outline: none;
+      background-color: $bg-white;
+      color: $text-main;
+      font-size: 14px;
+
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: auto;
+      }
+    }
+
+    input {
+      @media (min-width: 768px) {
+        min-width: 350px;
+      }
+    }
+
+    select {
+      @media (min-width: 768px) {
+        min-width: 200px;
+      }
+    }
+  }
+
+  .card {
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 3rem;
+  }
+
+  .card-details {
+    background-color: $bg-white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow;
+    transition: transform 0.2s ease;
+    border: 1px solid #f9f9f9;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .card-image {
+      height: 160px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card-title {
+      padding: 1.5rem 1.5rem 0.5rem;
+      h1 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin: 0;
+      }
+    }
+
+    .info {
+      padding: 0 1.5rem 1.5rem;
+      p {
+        margin: 4px 0;
+        font-size: 0.85rem;
+        color: $text-main;
+
+        &::before {
+          font-weight: 600;
+        }
+        &:nth-child(1)::before {
+          content: 'Population: ';
+        }
+        &:nth-child(2)::before {
+          content: 'Region: ';
+        }
+        &:nth-child(3)::before {
+          content: 'Capital: ';
+        }
+      }
+    }
+  }
+}

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SnapFace } from './snap-face';
+import { CountryList } from './country-list';
 
-describe('SnapFace', () => {
-  let component: SnapFace;
-  let fixture: ComponentFixture<SnapFace>;
+describe('CountryList', () => {
+  let component: CountryList;
+  let fixture: ComponentFixture<CountryList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SnapFace]
+      imports: [CountryList]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SnapFace);
+    fixture = TestBed.createComponent(CountryList);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
