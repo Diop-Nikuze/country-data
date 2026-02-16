@@ -1,59 +1,34 @@
-# MyFirstAngularApp
+# Rest Countries API - Challenge
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+Solution du challenge Frontend Mentor pour explorer les pays du monde avec recherche et filtrage dynamique.
 
-## Development server
+## Fonctionnalités
 
-To start a local development server, run:
+- Liste complète des pays triée par ordre alphabétique.
+- Recherche textuelle instantanée.
+- Filtrage par région.
+- Navigation détaillée via le routage Angular.
 
-```bash
-ng serve
-```
+## Acquis techniques du challenge
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Angular Signals
 
-## Code scaffolding
+- **Gestion d'état** : Utilisation de `signal()` pour piloter la recherche et les filtres.
+- **Inputs** : Utilisation de `input.required()` pour récupérer dynamiquement les paramètres d'URL.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### RxJS et Programmation Réactive
 
-```bash
-ng generate component component-name
-```
+- **toObservable** : Transformation des Signals en flux pour les coupler aux données API.
+- **combineLatest** : Synchronisation de plusieurs sources (API + Recherche + Filtre région) pour un affichage cohérent.
+- **pipe et map** : Transformation des données (filtrage et tri immuable avec `[...countries]`).
+- **localeCompare** : Tri alphabétique précis gérant les caractères spéciaux.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### HttpClient et Services
 
-```bash
-ng generate --help
-```
+- **Centralisation** : Gestion des appels API dans un `CountryService`.
+- **Consommation** : Utilisation du pipe `| async` pour une gestion propre des souscriptions et éviter les fuites de mémoire.
 
-## Building
+### Routing
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Routes dynamiques** : Mise en place de routes paramétrées (`country/:name`).
+- **Navigation** : Utilisation de `RouterLink` pour une expérience fluide sans rechargement de page.
