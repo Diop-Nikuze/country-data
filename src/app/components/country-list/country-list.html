@@ -1,34 +1,83 @@
-<main class="container">
-  <div class="header">
-    <h1>Notre belle planète</h1>
-    <input [formControl]="searchControl" type="text" placeholder="Rechercher un pays..." />
-    <select name="region" id="region" [formControl]="regionTerm">
-      <option value="">Toutes les régions</option>
-      <option value="africa">Afrique</option>
-      <option value="americas">Amériques</option>
-      <option value="asia">Asie</option>
-      <option value="europe">Europe</option>
-      <option value="oceania">Océanie</option>
-    </select>
+<div class="container py-5">
+  <div class="row mb-5 align-items-center">
+    <div class="col-12 col-md-6">
+      <h1 class="fw-bold">Notre belle planète</h1>
+    </div>
+    <div
+      class="col-12 col-md-6 d-flex flex-column flex-sm-row gap-3 justify-content-md-end mt-3 mt-md-0"
+    >
+      <input
+        type="text"
+        class="form-control shadow-sm w-auto"
+        placeholder="Rechercher un pays..."
+        [formControl]="searchControl"
+      />
+
+      <select class="form-select shadow-sm w-auto" [formControl]="regionTerm">
+        <option value="">Toutes les régions</option>
+        <option value="africa">Afrique</option>
+        <option value="americas">Amériques</option>
+        <option value="asia">Asie</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Océanie</option>
+      </select>
+    </div>
   </div>
 
-  <div class="card">
+  <div class="row g-4">
     @if (filteredCountries$ | async; as countries) {
       @for (country of countries; track country.name.common) {
-        <div class="card-details" [routerLink]="['country/', country.name.common]">
-          <div class="card-image">
-            <img [src]="country.flags.svg" [alt]="country.name.common" />
+        <div class="col-12 col-md-6 col-lg-3">
+          <div
+            class="card h-100 border-0 shadow-sm"
+            style="cursor: pointer"
+            [routerLink]="['country/', country.name.common]"
+          >
+            <img
+              [src]="country.flags.svg"
+              [alt]="country.name.common"
+              class="card-img-top"
+              style="object-fit: cover; height: 200px"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-3 text-truncate">{{ country.name.common }}</h5>
+              <p class="card-text fs-6">
+                <span class="fw-medium">Population: </span>{{ country.population.toLocaleString() }}
+              </p>
+              <p class="card-text fs-6">
+                <span class="fw-medium">Région: </span>{{ country.region }}
+              </p>
+              <p class="card-text fs-6">
+                <span class="fw-medium">Capitale: </span>{{ country.capital }}
+              </p>
+            </div>
           </div>
-          <div class="card-title">
-            <h1>{{ country.name.common }}</h1>
-          </div>
-          <div class="info">
-            <p>{{ country.population.toLocaleString() }}</p>
-            <p>{{ country.region }}</p>
-            <p>{{ country.capital }}</p>
+        </div>
+      }
+    } @else {
+      @for (placeholder of [1, 2, 3, 4, 5, 6, 7, 8]; track placeholder) {
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm" aria-hidden="true">
+            <div class="placeholder-glow">
+              <div
+                class="placeholder col-12"
+                style="height: 200px; background-color: #e9ecef"
+              ></div>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-8"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+              </p>
+            </div>
           </div>
         </div>
       }
     }
   </div>
-</main>
+</div>
