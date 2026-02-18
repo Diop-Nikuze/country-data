@@ -1,5 +1,4 @@
-import { Resolve, Routes } from '@angular/router';
-import { App } from './app';
+import { Routes } from '@angular/router';
 import { CountryDetails } from './components/country-details/country-details';
 import { CountryList } from './components/country-list/country-list';
 
